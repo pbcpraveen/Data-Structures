@@ -19,12 +19,13 @@ struct node* newNode(int x)
 	return Node;
 }
 
-void postOrder(struct node* tree)
+void inOrder(struct node* tree)
 {
 	if(tree==NULL){return;}
 	postOrder(tree->left);
-	postOrder(tree->right);
 	printf("%c ",tree->data);
+	postOrder(tree->right);
+	
 }
 
 
@@ -49,8 +50,8 @@ void main()
 			stack[++top]=temp;
 		}
 	}	
-	printf("POSTORDER TRAVERSAL OF THE EXPRESSION TREE IS :");
-	postOrder(stack[top]);
+	printf("INORDER TRAVERSAL OF THE EXPRESSION TREE IS :");
+	inOrder(stack[top]);
 	printf("\n");
 }
 
